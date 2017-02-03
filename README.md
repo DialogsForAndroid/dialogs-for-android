@@ -4,6 +4,28 @@
 
 ![Screenshots](art/readmeshowcase.png)
 
+## About this project
+
+This is a fork of [material-dialogs](https://github.com/afollestad/material-dialogs)
+by Aidan Follestad, who deserves credits for the initial software developmet up to
+January 2017.
+
+The goal of this project is to improve software quality and ensure a stable API for
+professional users. [Semantic versioning](http://semver.org/) should be established
+after some weeks of unstable development. The javadocs will be published online.
+In order to build up a sustainable project, the plan is to form a group of capable
+developers (maybe ~5 active people with write access) that can maintain the project.
+You can qualify for being a member of the organization by contributing code and discussion.
+
+Minimum API level is 16, which may seem high for a library but it makes this project
+ready for the future.
+
+### Users
+
+This library is currently used by (add yourself via PR):
+
+ * Kullo for Android
+
 ## Table of Contents (Core)
 
 1. [Sample Project](#sample-project)
