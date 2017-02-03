@@ -1,11 +1,8 @@
-# Material Dialogs
+# Dialogs for Android
 
-[ ![Core](https://api.bintray.com/packages/drummer-aidan/maven/material-dialogs%3Acore/images/download.svg) ](https://bintray.com/drummer-aidan/maven/material-dialogs%3Acore/_latestVersion)
-[ ![Commons](https://api.bintray.com/packages/drummer-aidan/maven/material-dialogs%3Acommons/images/download.svg) ](https://bintray.com/drummer-aidan/maven/material-dialogs%3Acommons/_latestVersion)
-[![Build Status](https://travis-ci.org/afollestad/material-dialogs.svg)](https://travis-ci.org/afollestad/material-dialogs)
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/afollestad/material-dialogs/blob/master/LICENSE.txt)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE.txt)
 
-![Screenshots](https://raw.githubusercontent.com/afollestad/material-dialogs/master/art/readmeshowcase.png)
+![Screenshots](art/readmeshowcase.png)
 
 ## Table of Contents (Core)
 
