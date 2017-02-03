@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.os.Handler;
 import android.support.annotation.ArrayRes;
 import android.support.annotation.AttrRes;
 import android.support.annotation.ColorInt;
@@ -84,7 +83,6 @@ public class MaterialDialog extends DialogBase implements
     protected TextView title;
     protected TextView content;
     protected EditText input;
-    private final Handler handler;
 
     public final Builder getBuilder() {
         return builder;
@@ -93,7 +91,6 @@ public class MaterialDialog extends DialogBase implements
     @SuppressLint("InflateParams")
     protected MaterialDialog(Builder builder) {
         super(builder.context, DialogInit.getTheme(builder));
-        handler = new Handler();
         this.builder = builder;
         final LayoutInflater inflater = LayoutInflater.from(builder.context);
         view = (MDRootLayout) inflater.inflate(DialogInit.getInflateLayout(builder), null);
@@ -1708,27 +1705,25 @@ public class MaterialDialog extends DialogBase implements
         setProgress(getCurrentProgress() + by);
     }
 
+    @UiThread
     public final void setProgress(final int progress) {
         if (builder.progress <= -2) {
             Log.w("MaterialDialog", "Calling setProgress(int) on an indeterminate progress dialog has no effect!");
             return;
         }
         progressBar.setProgress(progress);
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                if (progressLabel != null) {
-                    progressLabel.setText(builder.progressPercentFormat.format(
-                            (float) getCurrentProgress() / (float) getMaxProgress()));
-                }
-                if (progressMinMax != null) {
-                    progressMinMax.setText(String.format(builder.progressNumberFormat,
-                            getCurrentProgress(), getMaxProgress()));
-                }
-            }
-        });
+
+        if (progressLabel != null) {
+            progressLabel.setText(builder.progressPercentFormat.format(
+                    (float) getCurrentProgress() / (float) getMaxProgress()));
+        }
+        if (progressMinMax != null) {
+            progressMinMax.setText(String.format(builder.progressNumberFormat,
+                    getCurrentProgress(), getMaxProgress()));
+        }
     }
 
+    @UiThread
     public final void setMaxProgress(final int max) {
         if (builder.progress <= -2)
             throw new IllegalStateException("Cannot use setMaxProgress() on this dialog.");
