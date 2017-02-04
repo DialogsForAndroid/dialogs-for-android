@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.Theme;
+import io.github.dialogsforandroid.MaterialDialog;
+import io.github.dialogsforandroid.Theme;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

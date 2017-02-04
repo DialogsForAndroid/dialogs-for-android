@@ -1,6 +1,6 @@
 <manifest
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.afollestad.materialdialogs">
+    package="io.github.dialogsforandroid">
 
     <uses-sdk tools:overrideLibrary="me.zhanghai.android.materialprogressbar" />
 

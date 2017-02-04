@@ -27,20 +27,20 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.StackingBehavior;
-import com.afollestad.materialdialogs.Theme;
-import com.afollestad.materialdialogs.color.CircleView;
-import com.afollestad.materialdialogs.color.ColorChooserDialog;
-import com.afollestad.materialdialogs.folderselector.FileChooserDialog;
-import com.afollestad.materialdialogs.folderselector.FolderChooserDialog;
-import com.afollestad.materialdialogs.internal.MDTintHelper;
-import com.afollestad.materialdialogs.internal.ThemeSingleton;
-import com.afollestad.materialdialogs.simplelist.MaterialSimpleListAdapter;
-import com.afollestad.materialdialogs.simplelist.MaterialSimpleListItem;
-import com.afollestad.materialdialogs.util.DialogUtils;
+import io.github.dialogsforandroid.DialogAction;
+import io.github.dialogsforandroid.GravityEnum;
+import io.github.dialogsforandroid.MaterialDialog;
+import io.github.dialogsforandroid.StackingBehavior;
+import io.github.dialogsforandroid.Theme;
+import io.github.dialogsforandroid.color.CircleView;
+import io.github.dialogsforandroid.color.ColorChooserDialog;
+import io.github.dialogsforandroid.folderselector.FileChooserDialog;
+import io.github.dialogsforandroid.folderselector.FolderChooserDialog;
+import io.github.dialogsforandroid.internal.MDTintHelper;
+import io.github.dialogsforandroid.internal.ThemeSingleton;
+import io.github.dialogsforandroid.simplelist.MaterialSimpleListAdapter;
+import io.github.dialogsforandroid.simplelist.MaterialSimpleListItem;
+import io.github.dialogsforandroid.util.DialogUtils;
 
 import java.io.File;
 

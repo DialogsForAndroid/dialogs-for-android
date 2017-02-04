@@ -1,4 +1,5 @@
-<com.afollestad.materialdialogs.internal.MDRootLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<io.github.dialogsforandroid.internal.MDRootLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -67,4 +68,4 @@
 
     <include layout="@layout/md_stub_actionbuttons" />
 
-</com.afollestad.materialdialogs.internal.MDRootLayout>
+</io.github.dialogsforandroid.internal.MDRootLayout>

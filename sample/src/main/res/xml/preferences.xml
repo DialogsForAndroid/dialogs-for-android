@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.afollestad.materialdialogs.prefs.MaterialDialogPreference
+    <com.afollestad.dialogsforandroid.prefs.MaterialDialogPreference
         android:dialogIcon="@mipmap/ic_launcher"
         android:dialogMessage="@string/preference_dialog_message"
         android:dialogTitle="@string/preference_dialog_title"
@@ -11,7 +11,7 @@
         android:summary="@string/material_dialog_pref_summary"
         android:title="@string/material_dialog_pref_title" />
 
-    <com.afollestad.materialdialogs.prefs.MaterialListPreference
+    <com.afollestad.dialogsforandroid.prefs.MaterialListPreference
         android:entries="@array/preference_values"
         android:entryValues="@array/preference_values"
         android:key="unused_key01"
@@ -19,7 +19,7 @@
         android:summary="@string/list_pref_desc"
         android:title="@string/list_pref_title" />
 
-    <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference
+    <com.afollestad.dialogsforandroid.prefs.MaterialEditTextPreference
         android:defaultValue="@string/edittext_pref_optionalvalue"
         android:dialogMessage="@string/optional_dialog_message"
         android:dialogTitle="@string/edittext_pref_dialogtitle"
