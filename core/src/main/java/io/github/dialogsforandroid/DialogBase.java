@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import io.github.dialogsforandroid.internal.MDRootLayout;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 class DialogBase extends Dialog implements DialogInterface.OnShowListener {
 
     protected MDRootLayout view;

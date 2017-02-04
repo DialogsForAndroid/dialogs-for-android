@@ -12,9 +12,6 @@ import io.github.dialogsforandroid.GravityEnum;
 import io.github.dialogsforandroid.R;
 import io.github.dialogsforandroid.util.DialogUtils;
 
-/**
- * @author Kevin Barry (teslacoil) 4/02/2015
- */
 public class MDButton extends TextView {
 
     private boolean stacked = false;

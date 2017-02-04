@@ -30,9 +30,6 @@ import io.github.dialogsforandroid.commons.R;
 import io.github.dialogsforandroid.internal.MDTintHelper;
 import io.github.dialogsforandroid.util.DialogUtils;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class MaterialEditTextPreference extends EditTextPreference {
 
     private int mColor = 0;

@@ -8,9 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import io.github.dialogsforandroid.MaterialDialog;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class AboutDialog extends DialogFragment {
 
     public static void show(AppCompatActivity context) {

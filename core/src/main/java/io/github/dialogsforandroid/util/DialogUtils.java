@@ -22,9 +22,6 @@ import android.view.inputmethod.InputMethodManager;
 import io.github.dialogsforandroid.GravityEnum;
 import io.github.dialogsforandroid.MaterialDialog;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class DialogUtils {
 
 //    @SuppressWarnings("ConstantConditions")

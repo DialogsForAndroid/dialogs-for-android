@@ -13,9 +13,6 @@ import io.github.dialogsforandroid.commons.R;
 
 import java.lang.reflect.Method;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 class PrefUtil {
 
     private PrefUtil() {

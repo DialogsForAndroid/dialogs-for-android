@@ -41,8 +41,6 @@ import me.zhanghai.android.materialprogressbar.IndeterminateProgressDrawable;
 /**
  * Used by MaterialDialog while initializing the dialog. Offloads some of the code to make the main
  * class cleaner and easier to read/maintain.
- *
- * @author Aidan Follestad (afollestad)
  */
 class DialogInit {
 

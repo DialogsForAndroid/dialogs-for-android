@@ -4,9 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.GridView;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class FillGridView extends GridView {
 
     public FillGridView(Context context) {

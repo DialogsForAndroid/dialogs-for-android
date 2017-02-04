@@ -16,9 +16,6 @@ import android.view.View;
 import io.github.dialogsforandroid.DialogAction;
 import io.github.dialogsforandroid.MaterialDialog;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class MaterialDialogPreference extends DialogPreference {
 
     private Context context;

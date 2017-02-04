@@ -24,9 +24,9 @@ import io.github.dialogsforandroid.StackingBehavior;
 import io.github.dialogsforandroid.util.DialogUtils;
 
 /**
- * @author Kevin Barry (teslacoil) 4/02/2015 This is the top level view for all MaterialDialogs It
- *         handles the layout of: titleFrame (md_stub_titleframe) content (text, custom view,
- *         listview, etc) buttonDefault... (either stacked or horizontal)
+ * This is the top level view for all MaterialDialogs. It handles the layout of:
+ * titleFrame (md_stub_titleframe) content (text, custom view, listview, etc)
+ * buttonDefault... (either stacked or horizontal)
  */
 public class MDRootLayout extends ViewGroup {
 

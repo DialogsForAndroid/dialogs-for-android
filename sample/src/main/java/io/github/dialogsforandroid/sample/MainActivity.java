@@ -48,9 +48,6 @@ import io.github.dialogsforandroid.simplelist.MaterialSimpleListAdapter;
 import io.github.dialogsforandroid.simplelist.MaterialSimpleListItem;
 import io.github.dialogsforandroid.util.DialogUtils;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class MainActivity extends AppCompatActivity implements
         FolderChooserDialog.FolderCallback, FileChooserDialog.FileCallback, ColorChooserDialog.ColorCallback {
 

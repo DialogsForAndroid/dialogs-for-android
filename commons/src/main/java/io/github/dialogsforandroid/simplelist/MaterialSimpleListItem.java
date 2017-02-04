@@ -16,9 +16,6 @@ import android.util.TypedValue;
 
 import io.github.dialogsforandroid.util.DialogUtils;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class MaterialSimpleListItem {
 
     private final Builder builder;

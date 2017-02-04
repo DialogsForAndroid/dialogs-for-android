@@ -18,9 +18,6 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class ChangelogDialog extends DialogFragment {
 
     public static ChangelogDialog create(boolean darkTheme, int accentColor) {

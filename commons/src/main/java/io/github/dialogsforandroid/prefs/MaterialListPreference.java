@@ -19,9 +19,6 @@ import io.github.dialogsforandroid.MaterialDialog;
 
 import java.lang.reflect.Field;
 
-/**
- * @author Marc Holder Kluver (marchold), Aidan Follestad (afollestad)
- */
 public class MaterialListPreference extends ListPreference {
 
     private Context context;

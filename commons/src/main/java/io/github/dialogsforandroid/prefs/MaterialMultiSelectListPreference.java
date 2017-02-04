@@ -24,7 +24,6 @@ import java.util.Set;
 /**
  * This class only works on Honeycomb (API 11) and above.
  *
- * @author Aidan Follestad (afollestad)
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MaterialMultiSelectListPreference extends MultiSelectListPreference {

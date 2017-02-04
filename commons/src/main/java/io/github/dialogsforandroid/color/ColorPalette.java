@@ -2,9 +2,6 @@ package io.github.dialogsforandroid.color;
 
 import android.graphics.Color;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 class ColorPalette {
 
     public final static int[] PRIMARY_COLORS = new int[]{

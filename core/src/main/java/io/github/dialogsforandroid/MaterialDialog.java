@@ -58,9 +58,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public class MaterialDialog extends DialogBase implements
         View.OnClickListener, DefaultRvAdapter.InternalListCallback {
 

@@ -19,9 +19,6 @@ import android.widget.TextView;
 import io.github.dialogsforandroid.internal.MDTintHelper;
 import io.github.dialogsforandroid.util.DialogUtils;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 class DefaultRvAdapter extends RecyclerView.Adapter<DefaultRvAdapter.DefaultVH> {
 
     interface InternalListCallback {

@@ -39,9 +39,6 @@ import java.io.Serializable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 @SuppressWarnings({"FieldCanBeLocal", "ConstantConditions"})
 public class ColorChooserDialog extends DialogFragment implements View.OnClickListener, View.OnLongClickListener {
 

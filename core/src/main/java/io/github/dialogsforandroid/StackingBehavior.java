@@ -1,8 +1,5 @@
 package io.github.dialogsforandroid;
 
-/**
- * @author Aidan Follestad (afollestad)
- */
 public enum StackingBehavior {
     /**
      * The action buttons are always stacked vertically.
