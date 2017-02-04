@@ -27,6 +27,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.File;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.github.dialogsforandroid.DialogAction;
 import io.github.dialogsforandroid.GravityEnum;
 import io.github.dialogsforandroid.MaterialDialog;
@@ -41,11 +45,6 @@ import io.github.dialogsforandroid.internal.ThemeSingleton;
 import io.github.dialogsforandroid.simplelist.MaterialSimpleListAdapter;
 import io.github.dialogsforandroid.simplelist.MaterialSimpleListItem;
 import io.github.dialogsforandroid.util.DialogUtils;
-
-import java.io.File;
-
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * @author Aidan Follestad (afollestad)
