@@ -760,10 +760,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @OnClick(R.id.preference_dialogs)
     public void showPreferenceDialogs() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1)
-            startActivity(new Intent(getApplicationContext(), PreferenceActivity.class));
-        else
-            startActivity(new Intent(getApplicationContext(), PreferenceActivityCompat.class));
+        startActivity(new Intent(getApplicationContext(), PreferenceActivity.class));
     }
 
     @Override
