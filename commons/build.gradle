@@ -30,7 +30,7 @@ dependencies {
     compile project(':core')
 }
 
-// Changes to this block must be applyed in core/build.gradle and commons/build.gradle
+// Changes to this block must be applied in core/build.gradle and commons/build.gradle
 task("javadoc", type: Javadoc) {
     description "Generates Javadoc API documentation for the main source code."
     source = android.sourceSets.main.java.srcDirs
