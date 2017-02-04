@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogssample;
+package io.github.dialogsforandroid.sample;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

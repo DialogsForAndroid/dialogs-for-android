@@ -1,4 +1,4 @@
-package com.afollestad.materialdialogssample;
+package io.github.dialogsforandroid.sample;
 
 import android.Manifest;
 import android.annotation.TargetApi;
