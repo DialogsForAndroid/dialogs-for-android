@@ -1692,15 +1692,18 @@ public class MaterialDialog extends DialogBase implements
         builder.adapter.notifyDataSetChanged();
     }
 
+    @UiThread
     public final int getCurrentProgress() {
         if (progressBar == null) return -1;
         return progressBar.getProgress();
     }
 
+    @UiThread
     public ProgressBar getProgressBar() {
         return progressBar;
     }
 
+    @UiThread
     public final void incrementProgress(final int by) {
         setProgress(getCurrentProgress() + by);
     }
@@ -1730,10 +1733,12 @@ public class MaterialDialog extends DialogBase implements
         progressBar.setMax(max);
     }
 
+    @UiThread
     public final boolean isIndeterminateProgress() {
         return builder.indeterminateProgress;
     }
 
+    @UiThread
     public final int getMaxProgress() {
         if (progressBar == null) return -1;
         return progressBar.getMax();
@@ -1743,6 +1748,7 @@ public class MaterialDialog extends DialogBase implements
      * Change the format of the small text showing the percentage of progress. The default is
      * NumberFormat.getPercentageInstance().
      */
+    @UiThread
     public final void setProgressPercentFormat(NumberFormat format) {
         builder.progressPercentFormat = format;
         setProgress(getCurrentProgress()); // invalidates display
@@ -1752,6 +1758,7 @@ public class MaterialDialog extends DialogBase implements
      * Change the format of the small text showing current and maximum units of progress. The
      * default is "%1d/%2d".
      */
+    @UiThread
     public final void setProgressNumberFormat(String format) {
         builder.progressNumberFormat = format;
         setProgress(getCurrentProgress()); // invalidates display
