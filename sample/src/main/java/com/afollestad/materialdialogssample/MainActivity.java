@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements
     // UTILITY METHODS
     private int accentPreselect;
     private Toast toast;
-    private Thread thread;
     private Handler handler;
 
     private int chooserDialog;
@@ -77,13 +76,6 @@ public class MainActivity extends AppCompatActivity implements
         }
         toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
         toast.show();
-    }
-
-    private void startThread(Runnable run) {
-        if (thread != null)
-            thread.interrupt();
-        thread = new Thread(run);
-        thread.start();
     }
 
     private void showToast(@StringRes int message) {
@@ -107,13 +99,6 @@ public class MainActivity extends AppCompatActivity implements
     protected void onDestroy() {
         super.onDestroy();
         handler = null;
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (thread != null && !thread.isInterrupted() && thread.isAlive())
-            thread.interrupt();
     }
 
     @OnClick(R.id.basicNoTitle)
@@ -708,19 +693,15 @@ public class MainActivity extends AppCompatActivity implements
 
     @OnClick(R.id.progress1)
     public void showProgressDeterminateDialog() {
+        final Timer timer = new Timer();
         new MaterialDialog.Builder(this)
                 .title(R.string.progress_dialog)
                 .content(R.string.please_wait)
                 .contentGravity(GravityEnum.CENTER)
                 .progress(false, 150, true)
-                .cancelListener(dialog -> {
-                    if (thread != null)
-                        thread.interrupt();
-                })
+                .cancelListener(dialog -> timer.cancel())
                 .showListener(dialogInterface -> {
                     final MaterialDialog dialog = (MaterialDialog) dialogInterface;
-
-                    final Timer timer = new Timer();
                     timer.scheduleAtFixedRate(new TimerTask() {
                         @Override
                         public void run() {
