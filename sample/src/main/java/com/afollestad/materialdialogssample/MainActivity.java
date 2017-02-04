@@ -28,6 +28,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -717,24 +719,23 @@ public class MainActivity extends AppCompatActivity implements
                 })
                 .showListener(dialogInterface -> {
                     final MaterialDialog dialog = (MaterialDialog) dialogInterface;
-                    startThread(() -> {
-                        while (dialog.getCurrentProgress() != dialog.getMaxProgress() &&
-                                !Thread.currentThread().isInterrupted()) {
-                            if (dialog.isCancelled())
-                                break;
-                            try {
-                                Thread.sleep(50);
-                            } catch (InterruptedException e) {
-                                break;
-                            }
-                            dialog.incrementProgress(1);
-                        }
-                        runOnUiThread(() -> {
-                            thread = null;
-                            dialog.setContent(getString(R.string.md_done_label));
-                        });
 
-                    });
+                    final Timer timer = new Timer();
+                    timer.scheduleAtFixedRate(new TimerTask() {
+                        @Override
+                        public void run() {
+                            runOnUiThread(() -> {
+                                if (dialog.getCurrentProgress() >= dialog.getMaxProgress()) {
+                                    dialog.setContent(getString(R.string.md_done_label));
+                                    timer.cancel();
+                                } else if (dialog.isCancelled()) {
+                                    timer.cancel();
+                                } else {
+                                    dialog.incrementProgress(1);
+                                }
+                            });
+                        }
+                    }, 0, 50);
                 }).show();
     }
 
