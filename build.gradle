@@ -3,6 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        // http://google.github.io/android-gradle-dsl
         classpath 'com.android.tools.build:gradle:2.2.3'
     }
 }
