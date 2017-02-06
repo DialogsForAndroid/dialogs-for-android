@@ -24,6 +24,12 @@ import io.github.dialogsforandroid.MaterialDialog;
 
 public class DialogUtils {
 
+    /**
+     * No instance needed. Call all methods in this class in a static fashion: DialogUtils.methodXy()
+     */
+    private DialogUtils() {
+    }
+
     @ColorInt
     public static int getDisabledColor(Context context) {
         final int primaryColor = resolveColor(context, android.R.attr.textColorPrimary);
