@@ -150,8 +150,8 @@ If you Watch this repository, GitHub will send you an email every time I publish
 
 ## Documentation
 
-We use Javadocs, which online at
-[https://dialogsforandroid.github.io/docs/](https://dialogsforandroid.github.io/docs/).
+We use Javadoc, which online at
+[https://dialogsforandroid.github.io/javadoc/](https://dialogsforandroid.github.io/javadoc/).
 
 You can build them locally using `./gradlew javadoc` on UNIX and
 `gradlew.bat javadoc` on Windows. This generates the docs into
