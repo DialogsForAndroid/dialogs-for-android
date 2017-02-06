@@ -51,7 +51,7 @@ public class MDButton extends TextView {
                 setTextAlignment(stacked ? stackedGravity.getTextAlignment() : TEXT_ALIGNMENT_CENTER);
             }
 
-            DialogUtils.setBackgroundCompat(this, stacked ? stackedBackground : defaultBackground);
+            setBackground(stacked ? stackedBackground : defaultBackground);
             if (stacked) {
                 setPadding(stackedEndPadding, getPaddingTop(), stackedEndPadding, getPaddingBottom());
             } /* Else the padding was properly reset by the drawable */

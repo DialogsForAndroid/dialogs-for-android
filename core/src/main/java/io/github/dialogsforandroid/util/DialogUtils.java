@@ -202,15 +202,6 @@ public class DialogUtils {
         return darkness >= 0.5;
     }
 
-    public static void setBackgroundCompat(View view, Drawable d) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-            //noinspection deprecation
-            view.setBackgroundDrawable(d);
-        } else {
-            view.setBackground(d);
-        }
-    }
-
     public static void showKeyboard(@NonNull final DialogInterface di, @NonNull final MaterialDialog.Builder builder) {
         final MaterialDialog dialog = (MaterialDialog) di;
         if (dialog.getInputEditText() == null) return;
