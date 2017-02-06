@@ -27,6 +27,10 @@ This library is currently used by (add yourself via PR):
 
  * Kullo for Android
 
+## Migration guide
+
+ * [material-dialogs 0.9.x to dialogs-for-android](docs/migrate_material-dialogs_to_dialogs-for-android.md)
+
 ## Table of Contents (Core)
 
 1. [Sample Project](#sample-project)
