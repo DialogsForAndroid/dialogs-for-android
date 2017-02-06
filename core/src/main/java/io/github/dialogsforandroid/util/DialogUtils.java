@@ -24,16 +24,6 @@ import io.github.dialogsforandroid.MaterialDialog;
 
 public class DialogUtils {
 
-//    @SuppressWarnings("ConstantConditions")
-//    public static float resolveFloat(Context context, int attr) {
-//        TypedArray a = context.obtainStyledAttributes(null, new int[]{attr});
-//        try {
-//            return a.getFloat(0, 0);
-//        } finally {
-//            a.recycle();
-//        }
-//    }
-
     @ColorInt
     public static int getDisabledColor(Context context) {
         final int primaryColor = resolveColor(context, android.R.attr.textColorPrimary);
