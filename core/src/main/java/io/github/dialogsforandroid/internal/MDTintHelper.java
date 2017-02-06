@@ -110,9 +110,6 @@ public class MDTintHelper {
                 progressBar.setIndeterminateTintList(sl);
         } else {
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
-                mode = PorterDuff.Mode.MULTIPLY;
-            }
             if (!skipIndeterminate && progressBar.getIndeterminateDrawable() != null)
                 progressBar.getIndeterminateDrawable().setColorFilter(color, mode);
             if (progressBar.getProgressDrawable() != null)
