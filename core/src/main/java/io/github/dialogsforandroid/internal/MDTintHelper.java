@@ -86,24 +86,14 @@ public class MDTintHelper {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             seekBar.setThumbTintList(s1);
             seekBar.setProgressTintList(s1);
-        } else if (Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
+        } else {
             Drawable progressDrawable = DrawableCompat.wrap(seekBar.getProgressDrawable());
             seekBar.setProgressDrawable(progressDrawable);
             DrawableCompat.setTintList(progressDrawable, s1);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                Drawable thumbDrawable = DrawableCompat.wrap(seekBar.getThumb());
-                DrawableCompat.setTintList(thumbDrawable, s1);
-                seekBar.setThumb(thumbDrawable);
-            }
-        } else {
-            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
-                mode = PorterDuff.Mode.MULTIPLY;
-            }
-            if (seekBar.getIndeterminateDrawable() != null)
-                seekBar.getIndeterminateDrawable().setColorFilter(color, mode);
-            if (seekBar.getProgressDrawable() != null)
-                seekBar.getProgressDrawable().setColorFilter(color, mode);
+
+            Drawable thumbDrawable = DrawableCompat.wrap(seekBar.getThumb());
+            DrawableCompat.setTintList(thumbDrawable, s1);
+            seekBar.setThumb(thumbDrawable);
         }
     }
 
