@@ -17,10 +17,10 @@ import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
+
 import io.github.dialogsforandroid.R;
 import io.github.dialogsforandroid.util.DialogUtils;
-
-import java.lang.reflect.Field;
 
 /**
  * Tints widgets
