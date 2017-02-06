@@ -347,10 +347,6 @@ public class MaterialDialog extends DialogBase implements
         DialogAction tag = (DialogAction) v.getTag();
         switch (tag) {
             case POSITIVE: {
-                if (builder.callback != null) {
-                    builder.callback.onAny(this);
-                    builder.callback.onPositive(this);
-                }
                 if (builder.onPositiveCallback != null)
                     builder.onPositiveCallback.onClick(this, tag);
                 if (!builder.alwaysCallSingleChoiceCallback)
@@ -363,20 +359,12 @@ public class MaterialDialog extends DialogBase implements
                 break;
             }
             case NEGATIVE: {
-                if (builder.callback != null) {
-                    builder.callback.onAny(this);
-                    builder.callback.onNegative(this);
-                }
                 if (builder.onNegativeCallback != null)
                     builder.onNegativeCallback.onClick(this, tag);
                 if (builder.autoDismiss) cancel();
                 break;
             }
             case NEUTRAL: {
-                if (builder.callback != null) {
-                    builder.callback.onAny(this);
-                    builder.callback.onNeutral(this);
-                }
                 if (builder.onNeutralCallback != null)
                     builder.onNeutralCallback.onClick(this, tag);
                 if (builder.autoDismiss) dismiss();
@@ -415,7 +403,6 @@ public class MaterialDialog extends DialogBase implements
         protected ColorStateList negativeColor;
         protected ColorStateList neutralColor;
         protected ColorStateList linkColor;
-        protected ButtonCallback callback;
         protected SingleButtonCallback onPositiveCallback;
         protected SingleButtonCallback onNegativeCallback;
         protected SingleButtonCallback onNeutralCallback;
@@ -797,36 +784,12 @@ public class MaterialDialog extends DialogBase implements
             return this;
         }
 
-        /**
-         * Renamed to {@link #itemsColor(int)} for consistency.
-         */
-        @Deprecated
-        public Builder itemColor(@ColorInt int color) {
-            return itemsColor(color);
-        }
-
         public Builder itemsColorRes(@ColorRes int colorRes) {
             return itemsColor(DialogUtils.getColor(this.context, colorRes));
         }
 
-        /**
-         * Renamed to {@link #itemsColorRes(int)} for consistency.
-         */
-        @Deprecated
-        public Builder itemColorRes(@ColorRes int colorRes) {
-            return itemsColorRes(colorRes);
-        }
-
         public Builder itemsColorAttr(@AttrRes int colorAttr) {
             return itemsColor(DialogUtils.resolveColor(this.context, colorAttr));
-        }
-
-        /**
-         * Renamed to {@link #itemsColorAttr(int)} for consistency.
-         */
-        @Deprecated
-        public Builder itemColorAttr(@AttrRes int colorAttr) {
-            return itemsColorAttr(colorAttr);
         }
 
         public Builder itemsGravity(@NonNull GravityEnum gravity) {
@@ -1213,11 +1176,6 @@ public class MaterialDialog extends DialogBase implements
             return backgroundColor(DialogUtils.resolveColor(this.context, colorAttr));
         }
 
-        public Builder callback(@NonNull ButtonCallback callback) {
-            this.callback = callback;
-            return this;
-        }
-
         public Builder onPositive(@NonNull SingleButtonCallback callback) {
             this.onPositiveCallback = callback;
             return this;
@@ -1335,16 +1293,6 @@ public class MaterialDialog extends DialogBase implements
             return this;
         }
 
-        /**
-         * @param stacked When true, action button stacking is forced.
-         * @return The Builder instance so you can chain calls to it.
-         * @deprecated Use {@link #stackingBehavior(StackingBehavior)} instead.
-         */
-        @Deprecated
-        public Builder forceStacking(boolean stacked) {
-            return stackingBehavior(stacked ? StackingBehavior.ALWAYS : StackingBehavior.ADAPTIVE);
-        }
-
         public Builder input(@Nullable CharSequence hint, @Nullable CharSequence prefill, boolean allowEmptyInput, @NonNull InputCallback callback) {
             if (this.customView != null)
                 throw new IllegalStateException("You cannot set content() when you're using a custom view.");
@@ -1370,30 +1318,6 @@ public class MaterialDialog extends DialogBase implements
         public Builder inputType(int type) {
             this.inputType = type;
             return this;
-        }
-
-        /**
-         * @deprecated in favor of {@link #inputRange(int, int)}
-         */
-        @Deprecated
-        public Builder inputMaxLength(@IntRange(from = 1, to = Integer.MAX_VALUE) int maxLength) {
-            return inputRange(0, maxLength, 0);
-        }
-
-        /**
-         * @deprecated in favor of {@link #inputRange(int, int, int)}
-         */
-        @Deprecated
-        public Builder inputMaxLength(@IntRange(from = 1, to = Integer.MAX_VALUE) int maxLength, @ColorInt int errorColor) {
-            return inputRange(0, maxLength, errorColor);
-        }
-
-        /**
-         * @deprecated in favor of {@link #inputRangeRes(int, int, int)}
-         */
-        @Deprecated
-        public Builder inputMaxLengthRes(@IntRange(from = 1, to = Integer.MAX_VALUE) int maxLength, @ColorRes int errorColor) {
-            return inputRangeRes(0, maxLength, errorColor);
         }
 
         public Builder inputRange(@IntRange(from = 0, to = Integer.MAX_VALUE) int minLength,
@@ -1643,14 +1567,6 @@ public class MaterialDialog extends DialogBase implements
     @UiThread
     public final void setContent(@StringRes int newContentRes, @Nullable Object... formatArgs) {
         setContent(builder.context.getString(newContentRes, formatArgs));
-    }
-
-    /**
-     * @deprecated Use setContent() instead.
-     */
-    @Deprecated
-    public void setMessage(CharSequence message) {
-        setContent(message);
     }
 
     @Nullable
@@ -2017,64 +1933,6 @@ public class MaterialDialog extends DialogBase implements
          * @return True to allow the checkbox to be selected.
          */
         boolean onSelection(MaterialDialog dialog, Integer[] which, CharSequence[] text);
-    }
-
-    /**
-     * Override these as needed, so no needing to sub empty methods from an interface
-     *
-     * @deprecated Use the individual onPositive, onNegative, onNeutral, or onAny Builder methods
-     * instead.
-     */
-    @SuppressWarnings("WeakerAccess")
-    @Deprecated
-    public static abstract class ButtonCallback {
-
-        @Deprecated
-        public void onAny(MaterialDialog dialog) {
-        }
-
-        @Deprecated
-        public void onPositive(MaterialDialog dialog) {
-        }
-
-        @Deprecated
-        public void onNegative(MaterialDialog dialog) {
-        }
-
-        @Deprecated
-        public void onNeutral(MaterialDialog dialog) {
-        }
-
-        // The overidden methods below prevent Android Studio from suggesting that they are overidden by developers
-
-        public ButtonCallback() {
-            super();
-        }
-
-        @Override
-        protected final Object clone() throws CloneNotSupportedException {
-            return super.clone();
-        }
-
-        @Override
-        public final boolean equals(Object o) {
-            return super.equals(o);
-        }
-
-        @Override
-        protected final void finalize() throws Throwable {
-            super.finalize();
-        }
-
-        @Override
-        public final int hashCode() {
-            return super.hashCode();
-        }
-
-        @Override
-        public final String toString() {
-            return super.toString();
-        }
     }
 
     /**
