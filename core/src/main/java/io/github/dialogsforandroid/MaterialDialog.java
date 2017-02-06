@@ -42,14 +42,6 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import io.github.dialogsforandroid.internal.MDButton;
-import io.github.dialogsforandroid.internal.MDRootLayout;
-import io.github.dialogsforandroid.internal.MDTintHelper;
-import io.github.dialogsforandroid.internal.ThemeSingleton;
-import io.github.dialogsforandroid.util.DialogUtils;
-import io.github.dialogsforandroid.util.RippleHelper;
-import io.github.dialogsforandroid.util.TypefaceHelper;
-
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,6 +49,14 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+
+import io.github.dialogsforandroid.internal.MDButton;
+import io.github.dialogsforandroid.internal.MDRootLayout;
+import io.github.dialogsforandroid.internal.MDTintHelper;
+import io.github.dialogsforandroid.internal.ThemeSingleton;
+import io.github.dialogsforandroid.util.DialogUtils;
+import io.github.dialogsforandroid.util.RippleHelper;
+import io.github.dialogsforandroid.util.TypefaceHelper;
 
 public class MaterialDialog extends DialogBase implements
         View.OnClickListener, DefaultRvAdapter.InternalListCallback {
