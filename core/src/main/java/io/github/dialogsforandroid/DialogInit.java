@@ -25,15 +25,14 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import io.github.dialogsforandroid.internal.MDAdapter;
 import io.github.dialogsforandroid.internal.MDButton;
 import io.github.dialogsforandroid.internal.MDRootLayout;
 import io.github.dialogsforandroid.internal.MDTintHelper;
 import io.github.dialogsforandroid.util.DialogUtils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import me.zhanghai.android.materialprogressbar.HorizontalProgressDrawable;
 import me.zhanghai.android.materialprogressbar.IndeterminateHorizontalProgressDrawable;
 import me.zhanghai.android.materialprogressbar.IndeterminateProgressDrawable;
@@ -228,13 +227,9 @@ class DialogInit {
         dialog.view.setButtonStackedGravity(builder.btnStackedGravity);
         dialog.view.setStackingBehavior(builder.stackingBehavior);
         boolean textAllCaps;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            textAllCaps = DialogUtils.resolveBoolean(builder.context, android.R.attr.textAllCaps, true);
-            if (textAllCaps)
-                textAllCaps = DialogUtils.resolveBoolean(builder.context, R.attr.textAllCaps, true);
-        } else {
+        textAllCaps = DialogUtils.resolveBoolean(builder.context, android.R.attr.textAllCaps, true);
+        if (textAllCaps)
             textAllCaps = DialogUtils.resolveBoolean(builder.context, R.attr.textAllCaps, true);
-        }
 
         MDButton positiveTextView = dialog.positiveButton;
         dialog.setTypeface(positiveTextView, builder.mediumFont);
@@ -373,8 +368,7 @@ class DialogInit {
     }
 
     private static void fixCanvasScalingWhenHardwareAccelerated(ProgressBar pb) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB &&
-                Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
             // Canvas scaling when hardware accelerated results in artifacts on older API levels, so
             // we need to use software rendering
             if (pb.isHardwareAccelerated() && pb.getLayerType() != View.LAYER_TYPE_SOFTWARE) {
@@ -389,27 +383,23 @@ class DialogInit {
             dialog.progressBar = (ProgressBar) dialog.view.findViewById(android.R.id.progress);
             if (dialog.progressBar == null) return;
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                if (builder.indeterminateProgress) {
-                    if (builder.indeterminateIsHorizontalProgress) {
-                        IndeterminateHorizontalProgressDrawable d = new IndeterminateHorizontalProgressDrawable(builder.getContext());
-                        d.setTint(builder.widgetColor);
-                        dialog.progressBar.setProgressDrawable(d);
-                        dialog.progressBar.setIndeterminateDrawable(d);
-                    } else {
-                        IndeterminateProgressDrawable d = new IndeterminateProgressDrawable(builder.getContext());
-                        d.setTint(builder.widgetColor);
-                        dialog.progressBar.setProgressDrawable(d);
-                        dialog.progressBar.setIndeterminateDrawable(d);
-                    }
+            if (builder.indeterminateProgress) {
+                if (builder.indeterminateIsHorizontalProgress) {
+                    IndeterminateHorizontalProgressDrawable d = new IndeterminateHorizontalProgressDrawable(builder.getContext());
+                    d.setTint(builder.widgetColor);
+                    dialog.progressBar.setProgressDrawable(d);
+                    dialog.progressBar.setIndeterminateDrawable(d);
                 } else {
-                    HorizontalProgressDrawable d = new HorizontalProgressDrawable(builder.getContext());
+                    IndeterminateProgressDrawable d = new IndeterminateProgressDrawable(builder.getContext());
                     d.setTint(builder.widgetColor);
                     dialog.progressBar.setProgressDrawable(d);
                     dialog.progressBar.setIndeterminateDrawable(d);
                 }
             } else {
-                MDTintHelper.setTint(dialog.progressBar, builder.widgetColor);
+                HorizontalProgressDrawable d = new HorizontalProgressDrawable(builder.getContext());
+                d.setTint(builder.widgetColor);
+                dialog.progressBar.setProgressDrawable(d);
+                dialog.progressBar.setIndeterminateDrawable(d);
             }
 
             if (!builder.indeterminateProgress || builder.indeterminateIsHorizontalProgress) {
