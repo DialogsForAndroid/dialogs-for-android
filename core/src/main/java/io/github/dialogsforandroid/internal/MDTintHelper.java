@@ -9,7 +9,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.widget.AppCompatEditText;
+import android.support.v4.view.ViewCompat;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -134,11 +134,7 @@ public class MDTintHelper {
 
     public static void setTint(@NonNull EditText editText, @ColorInt int color) {
         ColorStateList editTextColorStateList = createEditTextColorStateList(editText.getContext(), color);
-        if (editText instanceof AppCompatEditText) {
-            ((AppCompatEditText) editText).setSupportBackgroundTintList(editTextColorStateList);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            editText.setBackgroundTintList(editTextColorStateList);
-        }
+        ViewCompat.setBackgroundTintList(editText, editTextColorStateList);
         setCursorTint(editText, color);
     }
 
