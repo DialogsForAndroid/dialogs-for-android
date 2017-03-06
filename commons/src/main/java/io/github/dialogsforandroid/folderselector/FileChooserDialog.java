@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class FileChooserDialog extends DialogFragment implements MaterialDialog.ListCallback {
 
@@ -70,7 +71,9 @@ public class FileChooserDialog extends DialogFragment implements MaterialDialog.
                     if (extensions != null) {
                         boolean found = false;
                         for (String ext : extensions) {
-                            if (fi.getName().toLowerCase().endsWith(ext.toLowerCase())) {
+                            // Use Locale.US because only ASCII-compatible extensions should be converted
+                            // to lowercase ([A-Z] -> [a-z]). For other characters, the behavior is undefined
+                            if (fi.getName().toLowerCase(Locale.US).endsWith(ext.toLowerCase(Locale.US))) {
                                 found = true;
                                 break;
                             }

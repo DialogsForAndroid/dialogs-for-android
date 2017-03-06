@@ -28,16 +28,16 @@ import android.widget.GridView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.Serializable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 import io.github.dialogsforandroid.DialogAction;
 import io.github.dialogsforandroid.MaterialDialog;
 import io.github.dialogsforandroid.Theme;
 import io.github.dialogsforandroid.commons.R;
 import io.github.dialogsforandroid.internal.MDTintHelper;
 import io.github.dialogsforandroid.util.DialogUtils;
-
-import java.io.Serializable;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 
 @SuppressWarnings({"FieldCanBeLocal", "ConstantConditions"})
 public class ColorChooserDialog extends DialogFragment implements View.OnClickListener, View.OnLongClickListener {
@@ -428,7 +428,7 @@ public class ColorChooserDialog extends DialogFragment implements View.OnClickLi
                     if (mCustomSeekA.getVisibility() == View.VISIBLE) {
                         int alpha = Color.alpha(mSelectedCustomColor);
                         mCustomSeekA.setProgress(alpha);
-                        mCustomSeekAValue.setText(String.format("%d", alpha));
+                        mCustomSeekAValue.setText(String.valueOf(alpha));
                     }
                     if (mCustomSeekA.getVisibility() == View.VISIBLE) {
                         int alpha = Color.alpha(mSelectedCustomColor);
