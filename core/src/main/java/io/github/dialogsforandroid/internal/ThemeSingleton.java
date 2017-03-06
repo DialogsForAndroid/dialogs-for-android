@@ -29,11 +29,8 @@ public class ThemeSingleton {
     public int titleColor = 0;
     @ColorInt
     public int contentColor = 0;
-    @ColorInt
     public ColorStateList positiveColor = null;
-    @ColorInt
     public ColorStateList neutralColor = null;
-    @ColorInt
     public ColorStateList negativeColor = null;
     @ColorInt
     public int widgetColor = 0;
@@ -44,7 +41,6 @@ public class ThemeSingleton {
     public int backgroundColor = 0;
     @ColorInt
     public int dividerColor = 0;
-    @ColorInt
     public ColorStateList linkColor = null;
 
     @DrawableRes
