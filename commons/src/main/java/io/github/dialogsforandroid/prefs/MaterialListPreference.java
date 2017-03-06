@@ -49,8 +49,6 @@ public class MaterialListPreference extends ListPreference {
     private void init(Context context, AttributeSet attrs) {
         this.context = context;
         PrefUtil.setLayoutResource(context, this, attrs);
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1)
-            setWidgetLayoutResource(0);
     }
 
     @Override

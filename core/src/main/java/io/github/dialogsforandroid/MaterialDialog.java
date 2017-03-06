@@ -113,12 +113,7 @@ public class MaterialDialog extends DialogBase implements
             @SuppressWarnings("ConstantConditions")
             @Override
             public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-                    //noinspection deprecation
-                    recyclerView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                } else {
-                    recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                }
+                recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
                 if (listType == ListType.SINGLE || listType == ListType.MULTI) {
                     int selectedIndex;
