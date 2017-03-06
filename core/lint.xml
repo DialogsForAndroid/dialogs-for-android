@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<lint>
+    <!-- triggered e.g. when a newer version of a library is available -->
+    <issue id="GradleDependency" severity="informational" />
+</lint>
