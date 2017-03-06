@@ -4,15 +4,14 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v7.text.AllCapsTransformationMethod;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.widget.TextView;
 
 import io.github.dialogsforandroid.GravityEnum;
 import io.github.dialogsforandroid.R;
-import io.github.dialogsforandroid.util.DialogUtils;
 
-public class MDButton extends TextView {
+public class MDButton extends AppCompatTextView {
 
     private boolean stacked = false;
     private GravityEnum stackedGravity;
