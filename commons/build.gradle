@@ -20,7 +20,6 @@ android {
         versionName PUBLISH_VERSION
     }
     lintOptions {
-        abortOnError false
         checkReleaseBuilds false
     }
 }

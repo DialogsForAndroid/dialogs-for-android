@@ -21,7 +21,6 @@ android {
         consumerProguardFiles 'progress-proguard.txt'
     }
     lintOptions {
-        abortOnError false
         checkReleaseBuilds false
     }
 }
