@@ -35,8 +35,8 @@ import io.github.dialogsforandroid.internal.MDRootLayout;
 import io.github.dialogsforandroid.internal.MDTintHelper;
 import io.github.dialogsforandroid.util.DialogUtils;
 import me.zhanghai.android.materialprogressbar.HorizontalProgressDrawable;
+import me.zhanghai.android.materialprogressbar.IndeterminateCircularProgressDrawable;
 import me.zhanghai.android.materialprogressbar.IndeterminateHorizontalProgressDrawable;
-import me.zhanghai.android.materialprogressbar.IndeterminateProgressDrawable;
 
 /**
  * Used by MaterialDialog while initializing the dialog. Offloads some of the code to make the main
@@ -392,7 +392,7 @@ class DialogInit {
                     dialog.progressBar.setProgressDrawable(d);
                     dialog.progressBar.setIndeterminateDrawable(d);
                 } else {
-                    IndeterminateProgressDrawable d = new IndeterminateProgressDrawable(builder.getContext());
+                    IndeterminateCircularProgressDrawable d = new IndeterminateCircularProgressDrawable(builder.getContext());
                     d.setTint(builder.widgetColor);
                     dialog.progressBar.setProgressDrawable(d);
                     dialog.progressBar.setIndeterminateDrawable(d);
