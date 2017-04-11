@@ -688,46 +688,50 @@ public class MainActivity extends AppCompatActivity implements
                 .show();
     }
 
-    @OnClick(R.id.progress1)
-    public void showProgressDeterminateDialog() {
+    @OnClick(R.id.progress_determinate_horizontal)
+    public void showDeterminateHorizontalProgressDialog() {
+        showDeterminateProgressDialogImpl();
+    }
+
+    @OnClick(R.id.progress_indeterminate_horizontal)
+    public void showHorizontalIndeterminateProgressDialog() {
+        showIndeterminateProgressDialogImpl(true);
+    }
+
+    @OnClick(R.id.progress_indeterminate_circular)
+    public void showIndeterminateCircularProgressDialog() {
+        showIndeterminateProgressDialogImpl(false);
+    }
+
+    private void showDeterminateProgressDialogImpl() {
         final Timer timer = new Timer();
         new MaterialDialog.Builder(this)
-                .title(R.string.progress_dialog)
-                .content(R.string.please_wait)
-                .contentGravity(GravityEnum.CENTER)
-                .progress(false, 150, true)
-                .cancelListener(dialog -> timer.cancel())
-                .showListener(dialogInterface -> {
-                    final MaterialDialog dialog = (MaterialDialog) dialogInterface;
-                    timer.scheduleAtFixedRate(new TimerTask() {
-                        @Override
-                        public void run() {
-                            runOnUiThread(() -> {
-                                if (dialog.getCurrentProgress() >= dialog.getMaxProgress()) {
-                                    dialog.setContent(getString(R.string.md_done_label));
-                                    timer.cancel();
-                                } else if (dialog.isCancelled()) {
-                                    timer.cancel();
-                                } else {
-                                    dialog.incrementProgress(1);
-                                }
-                            });
-                        }
-                    }, 0, 50);
-                }).show();
+            .title(R.string.progress_dialog)
+            .content(R.string.please_wait)
+            .contentGravity(GravityEnum.CENTER)
+            .progress(false, 150, true)
+            .cancelListener(dialog -> timer.cancel())
+            .showListener(dialogInterface -> {
+                final MaterialDialog dialog = (MaterialDialog) dialogInterface;
+                timer.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(() -> {
+                            if (dialog.getCurrentProgress() >= dialog.getMaxProgress()) {
+                                dialog.setContent(getString(R.string.md_done_label));
+                                timer.cancel();
+                            } else if (dialog.isCancelled()) {
+                                timer.cancel();
+                            } else {
+                                dialog.incrementProgress(1);
+                            }
+                        });
+                    }
+                }, 0, 50);
+            }).show();
     }
 
-    @OnClick(R.id.progress2)
-    public void showProgressIndeterminateDialog() {
-        showIndeterminateProgressDialog(false);
-    }
-
-    @OnClick(R.id.progress3)
-    public void showProgressHorizontalIndeterminateDialog() {
-        showIndeterminateProgressDialog(true);
-    }
-
-    private void showIndeterminateProgressDialog(boolean horizontal) {
+    private void showIndeterminateProgressDialogImpl(boolean horizontal) {
         new MaterialDialog.Builder(this)
                 .title(R.string.progress_dialog)
                 .content(R.string.please_wait)

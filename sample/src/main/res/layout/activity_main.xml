@@ -296,25 +296,25 @@
             android:text="@string/progress" />
 
         <Button
-            android:id="@+id/progress1"
+            android:id="@+id/progress_determinate_horizontal"
             android:layout_width="match_parent"
             android:layout_height="@dimen/sample_button_height"
             android:layout_marginTop="@dimen/sample_button_spacing"
-            android:text="@string/progress_dialog" />
+            android:text="@string/progress_dialog_determinate_horizontal" />
 
         <Button
-            android:id="@+id/progress2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/sample_button_height"
-            android:layout_marginTop="@dimen/sample_button_spacing"
-            android:text="@string/progress_dialog_indeterminate" />
-
-        <Button
-            android:id="@+id/progress3"
+            android:id="@+id/progress_indeterminate_horizontal"
             android:layout_width="match_parent"
             android:layout_height="@dimen/sample_button_height"
             android:layout_marginTop="@dimen/sample_button_spacing"
             android:text="@string/progress_dialog_indeterminate_horizontal" />
+
+        <Button
+            android:id="@+id/progress_indeterminate_circular"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sample_button_height"
+            android:layout_marginTop="@dimen/sample_button_spacing"
+            android:text="@string/progress_dialog_indeterminate_circular" />
 
         <!-- Preferences -->
 

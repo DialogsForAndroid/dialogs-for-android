@@ -142,9 +142,10 @@
     <string name="edittext_pref_desc">This is an example of an EditText preference that automatically uses Material Dialogs to show the input dialog.</string>
     <string name="edittext_pref_dialogtitle">Enter a Name</string>
     <string name="edittext_pref_optionalvalue">Default value</string>
-    <string name="progress_dialog_indeterminate">Progress Dialog (Indeterminate)</string>
-    <string name="progress_dialog_indeterminate_horizontal">Progress Dialog (Horizontal Indeterminate)</string>
     <string name="progress_dialog">Progress Dialog</string>
+    <string name="progress_dialog_indeterminate_horizontal">Progress Dialog\n(Indeterminate Horizontal)</string>
+    <string name="progress_dialog_determinate_horizontal">Progress Dialog\n(Determinate Horizontal)</string>
+    <string name="progress_dialog_indeterminate_circular">Progress Dialog\n(Indeterminate Circular)</string>
     <string name="please_wait">Please wait…</string>
     <string name="optional_dialog_message">This is an optional dialog message.</string>
     <string name="multiChoiceLimited">Multi Choice (Limit Selections)</string>
