@@ -30,7 +30,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
     compile "com.android.support:recyclerview-v7:$SUPPORT_LIBRARY_VERSION"
     compile "com.android.support:support-annotations:$SUPPORT_LIBRARY_VERSION"
-    compile "me.zhanghai.android.materialprogressbar:library:1.4.0"
+    compile "me.zhanghai.android.materialprogressbar:library:1.4.1"
 }
 
 // Changes to this block must be applied in core/build.gradle and commons/build.gradle
