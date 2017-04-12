@@ -8,7 +8,7 @@
 
     <include layout="@layout/md_stub_titleframe" />
 
-    <include layout="@layout/md_stub_progress_indeterminate" />
+    <include layout="@layout/md_stub_progress_indeterminate_circular" />
 
     <include layout="@layout/md_stub_actionbuttons" />
 

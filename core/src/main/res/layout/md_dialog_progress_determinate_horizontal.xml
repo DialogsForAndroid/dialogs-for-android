@@ -18,7 +18,7 @@
         android:paddingTop="@dimen/md_content_padding_top"
         android:paddingBottom="@dimen/md_content_padding_bottom">
 
-        <include layout="@layout/md_stub_progress" />
+        <include layout="@layout/md_stub_progress_determinate_horizontal" />
 
     </LinearLayout>
 

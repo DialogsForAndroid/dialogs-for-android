@@ -60,11 +60,11 @@ class DialogInit {
                 return R.layout.md_dialog_list_check;
             return R.layout.md_dialog_list;
         } else if (builder.progress > -2) {
-            return R.layout.md_dialog_progress;
+            return R.layout.md_dialog_progress_determinate_horizontal;
         } else if (builder.indeterminateProgress) {
             if (builder.indeterminateIsHorizontalProgress)
                 return R.layout.md_dialog_progress_indeterminate_horizontal;
-            return R.layout.md_dialog_progress_indeterminate;
+            return R.layout.md_dialog_progress_indeterminate_circular;
         } else if (builder.inputCallback != null) {
             if (builder.checkBoxPrompt != null)
                 return R.layout.md_dialog_input_check;
