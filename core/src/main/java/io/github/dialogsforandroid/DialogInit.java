@@ -436,10 +436,10 @@ class DialogInit {
 
             dialog.progressMinMax = (TextView) dialog.view.findViewById(R.id.md_minMax);
             if (dialog.progressMinMax != null) {
-                dialog.progressMinMax.setTextColor(builder.contentColor);
-                DialogUtils.setTypeface(dialog.progressMinMax, builder.regularFont);
-
                 if (builder.showMinMax) {
+                    dialog.progressMinMax.setTextColor(builder.contentColor);
+                    DialogUtils.setTypeface(dialog.progressMinMax, builder.regularFont);
+
                     dialog.progressMinMax.setVisibility(View.VISIBLE);
                     dialog.progressMinMax.setText(String.format(builder.progressNumberFormat,
                         0, builder.progressMax));
