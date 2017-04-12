@@ -16,9 +16,9 @@
 
     <ProgressBar
         android:id="@android:id/progress"
-        style="?android:progressBarStyleHorizontal"
+        style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="2dp" />
+        android:indeterminate="true" />
 
 </merge>
