@@ -715,7 +715,6 @@ public class MainActivity extends AppCompatActivity implements
         new MaterialDialog.Builder(this)
             .title(R.string.progress_dialog)
             .content(R.string.please_wait)
-            .contentGravity(GravityEnum.CENTER)
             .progress(false, 150, true)
             .progressHorizontal(horizontal)
             .cancelListener(dialog -> timer.cancel())
