@@ -20,6 +20,7 @@ import android.text.Html;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,6 +52,7 @@ import io.github.dialogsforandroid.util.DialogUtils;
 public class MainActivity extends AppCompatActivity implements
         FolderChooserDialog.FolderCallback, FileChooserDialog.FileCallback, ColorChooserDialog.ColorCallback {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private final static int STORAGE_PERMISSION_RC = 69;
 
     // Custom View Dialog
@@ -690,7 +692,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @OnClick(R.id.progress_determinate_horizontal)
     public void showDeterminateHorizontalProgressDialog() {
-        showDeterminateProgressDialogImpl();
+        showDeterminateProgressDialogImpl(true);
     }
 
     @OnClick(R.id.progress_indeterminate_horizontal)
@@ -698,18 +700,24 @@ public class MainActivity extends AppCompatActivity implements
         showIndeterminateProgressDialogImpl(true);
     }
 
+    @OnClick(R.id.progress_determinate_circular)
+    public void showDeterminateCircularProgressDialog() {
+        showDeterminateProgressDialogImpl(false);
+    }
+
     @OnClick(R.id.progress_indeterminate_circular)
     public void showIndeterminateCircularProgressDialog() {
         showIndeterminateProgressDialogImpl(false);
     }
 
-    private void showDeterminateProgressDialogImpl() {
+    private void showDeterminateProgressDialogImpl(boolean horizontal) {
         final Timer timer = new Timer();
         new MaterialDialog.Builder(this)
             .title(R.string.progress_dialog)
             .content(R.string.please_wait)
             .contentGravity(GravityEnum.CENTER)
             .progress(false, 150, true)
+            .progressHorizontal(horizontal)
             .cancelListener(dialog -> timer.cancel())
             .showListener(dialogInterface -> {
                 final MaterialDialog dialog = (MaterialDialog) dialogInterface;
@@ -717,6 +725,8 @@ public class MainActivity extends AppCompatActivity implements
                     @Override
                     public void run() {
                         runOnUiThread(() -> {
+                            Log.d(TAG, dialog.getCurrentProgress() + "/" + dialog.getMaxProgress());
+
                             if (dialog.getCurrentProgress() >= dialog.getMaxProgress()) {
                                 dialog.setContent(getString(R.string.md_done_label));
                                 timer.cancel();
@@ -736,7 +746,7 @@ public class MainActivity extends AppCompatActivity implements
                 .title(R.string.progress_dialog)
                 .content(R.string.please_wait)
                 .progress(true, 0)
-                .progressIndeterminateStyle(horizontal)
+                .progressHorizontal(horizontal)
                 .show();
     }
 

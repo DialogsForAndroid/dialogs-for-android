@@ -452,7 +452,7 @@ public class MaterialDialog extends DialogBase implements
 
         protected String progressNumberFormat;
         protected NumberFormat progressPercentFormat;
-        protected boolean indeterminateIsHorizontalProgress;
+        protected boolean horizontalProgress;
 
         protected boolean titleColorSet = false;
         protected boolean contentColorSet = false;
@@ -1060,6 +1060,7 @@ public class MaterialDialog extends DialogBase implements
          * @param indeterminate If true, an infinite circular spinner is shown. If false, a
          *                      horizontal progress bar is shown that is incremented or set via the
          *                      built MaterialDialog instance.
+         *                      The style (horizontal/circular) can be overridden using {@link #progressHorizontal(boolean)}
          * @param max           When indeterminate is false, the max value the horizontal progress
          *                      bar can get to.
          * @return An instance of the Builder so calls can be chained.
@@ -1068,10 +1069,11 @@ public class MaterialDialog extends DialogBase implements
             if (this.customView != null)
                 throw new IllegalStateException("You cannot set progress() when you're using a custom view.");
             if (indeterminate) {
+                this.horizontalProgress = false;
                 this.indeterminateProgress = true;
                 this.progress = -2;
             } else {
-                this.indeterminateIsHorizontalProgress = false;
+                this.horizontalProgress = true;
                 this.indeterminateProgress = false;
                 this.progress = -1;
                 this.progressMax = max;
@@ -1115,13 +1117,14 @@ public class MaterialDialog extends DialogBase implements
         }
 
         /**
-         * By default, indeterminate progress dialogs will use a circular indicator. You can change
-         * it to use a horizontal progress indicator.
+         * By default, indeterminate progress dialogs will use a circular indicator and
+         * determinate progress dialogs will use a horizontal indicator.
          *
-         * Has no effect if the dialog progress is not in indeterminate mode.
+         * Both defaults can be overridden here.
+         *
          */
-        public Builder progressIndeterminateStyle(boolean horizontal) {
-            this.indeterminateIsHorizontalProgress = horizontal;
+        public Builder progressHorizontal(boolean horizontal) {
+            this.horizontalProgress = horizontal;
             return this;
         }
 

@@ -143,8 +143,9 @@
     <string name="edittext_pref_dialogtitle">Enter a Name</string>
     <string name="edittext_pref_optionalvalue">Default value</string>
     <string name="progress_dialog">Progress Dialog</string>
-    <string name="progress_dialog_indeterminate_horizontal">Progress Dialog\n(Indeterminate Horizontal)</string>
     <string name="progress_dialog_determinate_horizontal">Progress Dialog\n(Determinate Horizontal)</string>
+    <string name="progress_dialog_indeterminate_horizontal">Progress Dialog\n(Indeterminate Horizontal)</string>
+    <string name="progress_dialog_determinate_circular">Progress Dialog\n(Determinate Circular)</string>
     <string name="progress_dialog_indeterminate_circular">Progress Dialog\n(Indeterminate Circular)</string>
     <string name="please_wait">Please wait…</string>
     <string name="optional_dialog_message">This is an optional dialog message.</string>
