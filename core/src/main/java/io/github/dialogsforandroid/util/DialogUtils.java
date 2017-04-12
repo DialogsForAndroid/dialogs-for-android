@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.IBinder;
@@ -18,6 +20,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 
 import io.github.dialogsforandroid.GravityEnum;
 import io.github.dialogsforandroid.MaterialDialog;
@@ -258,5 +261,12 @@ public class DialogUtils {
                 return true;
         }
         return false;
+    }
+
+    public static void setTypeface(TextView target, Typeface t) {
+        if (t == null) return;
+        int flags = target.getPaintFlags() | Paint.SUBPIXEL_TEXT_FLAG;
+        target.setPaintFlags(flags);
+        target.setTypeface(t);
     }
 }

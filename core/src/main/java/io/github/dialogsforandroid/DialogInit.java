@@ -180,7 +180,7 @@ class DialogInit {
 
         // Setup title and title frame
         if (dialog.title != null) {
-            dialog.setTypeface(dialog.title, builder.mediumFont);
+            DialogUtils.setTypeface(dialog.title, builder.mediumFont);
             dialog.title.setTextColor(builder.titleColor);
             dialog.title.setGravity(builder.titleGravity.getGravityInt());
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -199,7 +199,7 @@ class DialogInit {
         // Setup content
         if (dialog.content != null) {
             dialog.content.setMovementMethod(new LinkMovementMethod());
-            dialog.setTypeface(dialog.content, builder.regularFont);
+            DialogUtils.setTypeface(dialog.content, builder.regularFont);
             dialog.content.setLineSpacing(0f, builder.contentLineSpacingMultiplier);
             if (builder.linkColor == null)
                 dialog.content.setLinkTextColor(DialogUtils.resolveColor(dialog.getContext(), android.R.attr.textColorPrimary));
@@ -224,7 +224,7 @@ class DialogInit {
             dialog.checkBoxPrompt.setText(builder.checkBoxPrompt);
             dialog.checkBoxPrompt.setChecked(builder.checkBoxPromptInitiallyChecked);
             dialog.checkBoxPrompt.setOnCheckedChangeListener(builder.checkBoxPromptListener);
-            dialog.setTypeface(dialog.checkBoxPrompt, builder.regularFont);
+            DialogUtils.setTypeface(dialog.checkBoxPrompt, builder.regularFont);
             dialog.checkBoxPrompt.setTextColor(builder.contentColor);
             MDTintHelper.setTint(dialog.checkBoxPrompt, builder.widgetColor);
         }
@@ -239,7 +239,7 @@ class DialogInit {
             textAllCaps = DialogUtils.resolveBoolean(builder.context, R.attr.textAllCaps, true);
 
         MDButton positiveTextView = dialog.positiveButton;
-        dialog.setTypeface(positiveTextView, builder.mediumFont);
+        DialogUtils.setTypeface(positiveTextView, builder.mediumFont);
         positiveTextView.setAllCapsCompat(textAllCaps);
         positiveTextView.setText(builder.positiveText);
         positiveTextView.setTextColor(builder.positiveColor);
@@ -250,7 +250,7 @@ class DialogInit {
         dialog.positiveButton.setVisibility(View.VISIBLE);
 
         MDButton negativeTextView = dialog.negativeButton;
-        dialog.setTypeface(negativeTextView, builder.mediumFont);
+        DialogUtils.setTypeface(negativeTextView, builder.mediumFont);
         negativeTextView.setAllCapsCompat(textAllCaps);
         negativeTextView.setText(builder.negativeText);
         negativeTextView.setTextColor(builder.negativeColor);
@@ -261,7 +261,7 @@ class DialogInit {
         dialog.negativeButton.setVisibility(View.VISIBLE);
 
         MDButton neutralTextView = dialog.neutralButton;
-        dialog.setTypeface(neutralTextView, builder.mediumFont);
+        DialogUtils.setTypeface(neutralTextView, builder.mediumFont);
         neutralTextView.setAllCapsCompat(textAllCaps);
         neutralTextView.setText(builder.neutralText);
         neutralTextView.setTextColor(builder.neutralColor);
@@ -430,14 +430,14 @@ class DialogInit {
             dialog.progressLabel = (TextView) dialog.view.findViewById(R.id.md_label);
             if (dialog.progressLabel != null) {
                 dialog.progressLabel.setTextColor(builder.contentColor);
-                dialog.setTypeface(dialog.progressLabel, builder.mediumFont);
+                DialogUtils.setTypeface(dialog.progressLabel, builder.mediumFont);
                 dialog.progressLabel.setText(builder.progressPercentFormat.format(0));
             }
 
             dialog.progressMinMax = (TextView) dialog.view.findViewById(R.id.md_minMax);
             if (dialog.progressMinMax != null) {
                 dialog.progressMinMax.setTextColor(builder.contentColor);
-                dialog.setTypeface(dialog.progressMinMax, builder.regularFont);
+                DialogUtils.setTypeface(dialog.progressMinMax, builder.regularFont);
 
                 if (builder.showMinMax) {
                     dialog.progressMinMax.setVisibility(View.VISIBLE);
@@ -461,7 +461,7 @@ class DialogInit {
         final MaterialDialog.Builder builder = dialog.builder;
         dialog.input = (EditText) dialog.view.findViewById(android.R.id.input);
         if (dialog.input == null) return;
-        dialog.setTypeface(dialog.input, builder.regularFont);
+        DialogUtils.setTypeface(dialog.input, builder.regularFont);
         if (builder.inputPrefill != null)
             dialog.input.setText(builder.inputPrefill);
         dialog.setInternalInputCallback();

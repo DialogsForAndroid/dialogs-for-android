@@ -85,7 +85,7 @@ class DefaultRvAdapter extends RecyclerView.Adapter<DefaultRvAdapter.DefaultVH> 
 
         holder.title.setText(dialog.builder.items.get(index));
         holder.title.setTextColor(dialog.builder.itemColor);
-        dialog.setTypeface(holder.title, dialog.builder.regularFont);
+        DialogUtils.setTypeface(holder.title, dialog.builder.regularFont);
 
         setupGravity((ViewGroup) view);
 

@@ -94,13 +94,6 @@ public class MaterialDialog extends DialogBase implements
         DialogInit.init(this);
     }
 
-    public final void setTypeface(TextView target, Typeface t) {
-        if (t == null) return;
-        int flags = target.getPaintFlags() | Paint.SUBPIXEL_TEXT_FLAG;
-        target.setPaintFlags(flags);
-        target.setTypeface(t);
-    }
-
     @Nullable
     public Object getTag() {
         return builder.tag;

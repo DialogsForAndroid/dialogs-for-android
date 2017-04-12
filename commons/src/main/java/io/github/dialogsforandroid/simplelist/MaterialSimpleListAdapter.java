@@ -11,6 +11,7 @@ import android.widget.TextView;
 import io.github.dialogsforandroid.MaterialDialog;
 import io.github.dialogsforandroid.commons.R;
 import io.github.dialogsforandroid.internal.MDAdapter;
+import io.github.dialogsforandroid.util.DialogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +76,7 @@ public class MaterialSimpleListAdapter extends RecyclerView.Adapter<MaterialSimp
             }
             holder.title.setTextColor(dialog.getBuilder().getItemColor());
             holder.title.setText(item.getContent());
-            dialog.setTypeface(holder.title, dialog.getBuilder().getRegularFont());
+            DialogUtils.setTypeface(holder.title, dialog.getBuilder().getRegularFont());
         }
     }
 
