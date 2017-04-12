@@ -11,13 +11,12 @@
     android:paddingRight="@dimen/md_dialog_frame_margin"
     android:paddingTop="@dimen/md_content_padding_top">
 
-    <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+    <ProgressBar
         android:id="@android:id/progress"
         style="@style/Widget.MaterialProgressBar.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="false"
-        app:mpb_showProgressBackground="false" />
+        android:indeterminate="false" />
 
     <TextView
         android:id="@+id/md_content"
