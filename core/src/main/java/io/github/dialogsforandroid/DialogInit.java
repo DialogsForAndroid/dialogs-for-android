@@ -387,7 +387,7 @@ class DialogInit {
     @SuppressLint("NewApi") // setTint is implemented in materialprogressbar drawables for all supported SDK versions
     private static void setupProgressDialog(final MaterialDialog dialog) {
         final MaterialDialog.Builder builder = dialog.builder;
-        if (builder.indeterminateProgress || builder.progress > -2) {
+        if (builder.indeterminateProgress || builder.progress >= -1) {
             dialog.progressBar = (ProgressBar) dialog.view.findViewById(android.R.id.progress);
             if (dialog.progressBar == null) return;
 

@@ -427,6 +427,9 @@ public class MaterialDialog extends DialogBase implements
         protected int itemColor;
         protected boolean indeterminateProgress;
         protected boolean showMinMax;
+        // -2: field unused (indeterminate progress or no progress dialog)
+        // -1: determinate progress used but progress value unset
+        // >= 0: determinate progress used and progress value set
         protected int progress = -2;
         protected int progressMax = 0;
         protected CharSequence inputPrefill;
