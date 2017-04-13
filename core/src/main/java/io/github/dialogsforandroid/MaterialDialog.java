@@ -27,7 +27,6 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1614,12 +1613,24 @@ public class MaterialDialog extends DialogBase implements
         setProgress(getCurrentProgress() + by);
     }
 
+    /**
+     * Set the progress value to a specific value between 0 and {@link #getMaxProgress}.
+     *
+     * If dialog is not a progress dialog, this must not be called.
+     * If dialog is an indeterminate progress dialog, this call will be ignored.
+     *
+     */
     @UiThread
     public final void setProgress(final int progress) {
-        if (builder.progress <= -2) {
-            Log.w("MaterialDialog", "Calling setProgress(int) on an indeterminate progress dialog has no effect!");
-            return;
+        if (builder.progress == -2) {
+            if (builder.indeterminateProgress) {
+                return;
+            } else {
+                // not a progress dialog
+                throw new AssertionError("Called setProgress on a non-progress dialog.");
+            }
         }
+
         progressBar.setProgress(progress);
 
         if (progressLabel != null) {
