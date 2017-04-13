@@ -19,3 +19,5 @@
  11. **Replace MaterialDialog.Builder.inputMaxLengthRes(int, int) -> MaterialDialog.Builder.inputRangeRes(0, int, int)**
  12. **Replace MaterialDialog.setMessage -> MaterialDialog.setContent**
  13. **Replace Builder.callback(ButtonCallback) -> Builder.onPositive/onNegative/onNeutral/onAny**
+ 14. **Make MaterialDialog.setTypeface static and move to DialogUtils.setTypeface**
+ 15. **Rename progressIndeterminateStyle -> progressHorizontal** and make it work for determinate progress
