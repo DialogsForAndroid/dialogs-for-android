@@ -11,5 +11,8 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+
+        // For support library
+        maven { url "https://maven.google.com" }
     }
 }
