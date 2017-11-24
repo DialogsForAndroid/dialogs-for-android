@@ -18,17 +18,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import io.github.dialogsforandroid.DialogAction;
-import io.github.dialogsforandroid.MaterialDialog;
-import io.github.dialogsforandroid.commons.R;
-
 import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
+
+import io.github.dialogsforandroid.DialogAction;
+import io.github.dialogsforandroid.MaterialDialog;
+import io.github.dialogsforandroid.commons.R;
 
 public class FolderChooserDialog extends DialogFragment implements MaterialDialog.ListCallback {
 
@@ -122,7 +121,7 @@ public class FolderChooserDialog extends DialogFragment implements MaterialDialo
                 }
             });
         }
-        if (Objects.equals(getBuilder().initialPath, "/")) {
+        if (getBuilder().initialPath.equals("/")) {
             canGoUp = false;
         }
         return builder.build();
