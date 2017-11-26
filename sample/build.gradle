@@ -23,14 +23,10 @@ android {
         targetSdkVersion TARGET_SDK
         versionCode 171
         versionName PUBLISH_VERSION
-
-        jackOptions {
-            enabled true
-        }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
     lintOptions {
     }
@@ -43,9 +39,9 @@ android {
 }
 
 dependencies {
-    compile project(':core')
-    compile project(':commons')
-    compile "com.android.support:gridlayout-v7:$SUPPORT_LIBRARY_VERSION"
-    compile 'com.jakewharton:butterknife:8.1.0'
+    implementation project(':core')
+    implementation project(':commons')
+    implementation "com.android.support:gridlayout-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation 'com.jakewharton:butterknife:8.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.1.0'
 }
