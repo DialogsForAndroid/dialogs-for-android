@@ -8,7 +8,7 @@ apply plugin: 'com.android.application'
 
 ext {
     PUBLISH_VERSION = '0.9.2.3'
-    BUILD_TOOLS = "28.0.2"
+    BUILD_TOOLS = "27.0.3"
     TARGET_SDK = 27
 }
 
