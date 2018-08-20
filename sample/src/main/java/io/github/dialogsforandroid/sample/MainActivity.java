@@ -16,7 +16,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
-import android.text.Html;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements
         new MaterialDialog.Builder(this)
                 .iconRes(R.mipmap.ic_launcher)
                 .limitIconToDefaultSize()
-                .title(Html.fromHtml(getString(R.string.permissionSample, getString(R.string.app_name))))
+                .title(getString(R.string.permissionSample, getString(R.string.app_name)))
                 .positiveText(R.string.allow)
                 .negativeText(R.string.deny)
                 .onAny((dialog, which) -> showToast("Prompt checked? " + dialog.isPromptCheckBoxChecked()))

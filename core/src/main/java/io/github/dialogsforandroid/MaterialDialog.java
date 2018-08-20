@@ -1512,7 +1512,7 @@ public class MaterialDialog extends DialogBase implements
 
     @UiThread
     @Override
-    public final void setTitle(@NonNull CharSequence newTitle) {
+    public final void setTitle(@Nullable CharSequence newTitle) {
         title.setText(newTitle);
     }
 

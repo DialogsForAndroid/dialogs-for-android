@@ -195,7 +195,7 @@
     <string name="dont_ask_again">Don\'t ask again</string>
     <string name="deny">Deny</string>
     <string name="allow">Allow</string>
-    <string name="permissionSample"><![CDATA[Allow <b>%1$s</b> to show you a sample of a checkbox prompt?]]></string>
+    <string name="permissionSample">Allow %1$s to show you a sample of a checkbox prompt?></string>
     <string name="date_picker">Date Picker</string>
     <string name="list_checkPrompt">Basic List (CheckBox Prompt)</string>
     <string name="input_checkPrompt">Input (CheckBox Prompt)</string>
